@@ -170,8 +170,6 @@ margin-right: 50px;
 .position-relative {
   display: inline-block;
   position: relative;
-
-
 }
 
 .link-hover::after {
@@ -182,15 +180,13 @@ margin-right: 50px;
   height: 4px;
   background-color: var(--accent-color);
   border-radius: 2px;
-  bottom: 0;
+  bottom: -1px;
   /* opacity: 0; */
-
 }
 
 .active {
   opacity: 1;
-  
-  }
+}
 /* .active.link-hover:hover::after,
 .link-hover:focus::after {
   opacity: 1;
@@ -446,9 +442,9 @@ margin-right: 50px;
 }
 
 .team-link {
-  border: 1px solid var(--page-background);
+  background: var(--page-background);
 
-  transition-property: border;
+  transition-property: background;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -487,8 +483,8 @@ margin-right: 50px;
 
 /* Секция Постійні клієнти */
 
-/* li */
-.clients-card {
+/* a */
+.card-accent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -497,13 +493,19 @@ margin-right: 50px;
   border: 1px solid var(--clients);
   border-radius: 4px;
 
-  transition-property: border;
+  transition-property: border, fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+
 }
 
-.clients-card:hover,
-.clients-card:focus {
+.card-accent:hover .card-accent-icon,
+.card-accent:focus .card-accent-icon {
+  fill: var(--accent-color);
+}
+
+.card-accent:hover,
+.card-accent:focus {
   border: 1px solid var(--accent-color);
 }
 
@@ -511,6 +513,14 @@ margin-right: 50px;
 .contact-icon,
 .card-accent-icon {
   fill: var(--clients);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.svg-contact-icon {
+  fill: var(--priority-text-color);
 
   transition-property: fill;
   transition-duration: 250ms;
@@ -559,28 +569,89 @@ margin-right: 50px;
 
 /* Приєднуйтесь */
 
-.footer-social-text {
+.footer-text {
   font-weight: 700;
   line-height: calc(16 / 14);
   text-transform: uppercase;
   color: var(--hero);
 
   margin-bottom: 20px;
-  padding-top: 10px;
+
 }
 
-.svg-social-link {
-  fill: var(--logo-footer);
-
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 .team-link:hover,
 .team-link:focus {
   fill: var(--logo-footer);
 }
+
+/* Форма  Підпишіться на розсилку*/
+
+.footer-form-mail {
+  width: 358px;
+  height: 50px;
+  font-size: 16px; Тянет Підпишіться на розсилку
+  line-height: calc(20 / 16);
+}
+
+.footer-form-mail:hover .input-mail,
+.footer-form-mail:focus .input-mail {
+  border: 1px solid var(--accent-color);
+}
+
+.modal-container {
+  display: flex;
+  width: 570px;
+  height: 86px;
+}
+
+.input-mail {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: var(--hero-footer-background);
+  margin-right: 12px;
+  padding-left: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-mail:hover,
+.input-mail:focus {
+  border: 1px solid var(--accent-color);
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-footer-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.send-text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+
+  color: var(--page-background);
+}
+
+.send-icon {
+  fill: var(--page-background);
+  margin-left: 10px;
+}
+
 /* Страница Портфолио */
 /* Кнопки */
 .btn-flex {
@@ -596,6 +667,7 @@ margin-right: 50px;
 
   color: var(--title-text-color);
   background: var(--team-background);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 
   /* font-family: inherit; */
   font-weight: 500;
@@ -615,7 +687,7 @@ margin-right: 50px;
 /* Активная кнопка */
 .portfolio-button.active,
 .portfolio-button:hover,
-portfolio-button:focus {
+.portfolio-button:focus {
   /* padding: 6px 25px; */
   color: var(--logo-footer);
   background: var(--accent-color);
@@ -634,7 +706,7 @@ portfolio-button:focus {
   position: absolute;
   height: 100%;
   width: 100%;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -646,7 +718,6 @@ portfolio-button:focus {
   transform: translateY(calc(100% + 1px));
   /* transform: translateY(100%); */
 
-  
   font-size: 18px;
   line-height: calc(28 / 18);
   padding: 63px 24px;
@@ -659,7 +730,6 @@ portfolio-button:focus {
 .project:focus .project-description-text {
   transform: translateY(0);
 }
-
 
 /* .portfolio-button.active {
 
@@ -711,8 +781,6 @@ portfolio-button:focus {
   transition-duration: 250ms;
   transition-property: border, box-shadow, background;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-  
 }
 
 .project:hover,
@@ -741,6 +809,7 @@ portfolio-button:focus {
   display: flex;
   justify-content: left;
   gap: 70px;
+  align-items: baseline;
 }
 
 .footer-social-list {
@@ -751,12 +820,14 @@ portfolio-button:focus {
 }
 
 /* Модалка */
-.is-hidden{
+.is-hidden {
   visibility: hidden;
   /* opacity: 0; */
   cursor: pointer;
   /* pointer-events: ; */
 }
+
+
 
 .is-hidden .modal {
   scale: 0;
@@ -774,7 +845,6 @@ portfolio-button:focus {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
-
 }
 
 .modal {
@@ -788,13 +858,13 @@ portfolio-button:focus {
   height: 581px;
 
   background-color: var(--hero);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  transition-property: scale ;
+  transition-property: scale;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 /* Выравнивание кнопки относительно мод.окна */
@@ -818,10 +888,57 @@ portfolio-button:focus {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  
+}
+.modal-close-btn:hover .close-icon,
+.modal-close-btn:focus .close-icon {
+  fill: var(--accent-color);
+  cursor: pointer;
+}
+
+/* Форма модалки */
+.user-contscts {
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+}
+
+.forma-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+}
+
+.modal-container {
+  display: flex;
+  justify-content:space-between;
+  align-items: center ;
+  gap: 10px;
+}
+
+.modal-label {
+  display: block;
+  margin: 12px auto 4px;
+  /* color: var(--); */
   }
-  .modal-close-btn:hover .close-icon,
-  .modal-close-btn:focus .close-icon {
-    fill: var(--accent-color);
-    cursor: pointer;
-  }
+
+.modal-input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  padding-left: 42px;
+  height: 40px;
+  width: 100%;
+}
+
+.label-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.forms-icon {
+  position: absolute;
+  left: 12px;
+  fill: var(--logo-header);
+}
