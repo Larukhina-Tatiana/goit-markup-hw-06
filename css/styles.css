@@ -585,7 +585,7 @@ margin-right: 50px;
 /* Форма  Підпишіться на розсилку*/
 
 .footer-form-mail {
-  width: 358px;
+  width: 570px;
   line-height: calc(20 / 16);
 }
 
@@ -1070,19 +1070,24 @@ margin-right: 50px;
   opacity: 1;
 }
 
-/* .input-mail:placeholder-shown {
-  font-size: 16px;
-line-height: 20px;
 
-display: flex;
-align-items: center;
-letter-spacing: 0.03em;
 
-color: rgba(255, 255, 255, 0.6);
-
+.input-mail:not(:placeholder-shown):required:valid {
+  border-color: var(--accent-color);
+  background: var(--hero-footer-background);
+  color: rgba(255, 255, 255, 0.6);
 
 }
+.input-mail:not(:placeholder-shown):required:invalid {
+  border-color: red;
+  background: var(--hero-footer-background);
+  color: rgba(255, 255, 255, 0.6);
+}
+.input-mail:focus-within {
+  border-color: #2196f3;
+}
 
-.input-mail:not(:placeholder-shown) {
-  border: 1px solid var(--accent-color);
-} */
+.input-mail:focus-within {
+  color: rgba(255, 255, 255, 0.6);
+  border-color: #2196f3;
+}
