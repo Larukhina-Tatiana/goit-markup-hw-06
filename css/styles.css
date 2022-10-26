@@ -586,8 +586,6 @@ margin-right: 50px;
 
 .footer-form-mail {
   width: 358px;
-  height: 50px;
-  /* font-size: 16px; Тянет Підпишіться на розсилку */
   line-height: calc(20 / 16);
 }
 
@@ -599,7 +597,10 @@ margin-right: 50px;
 .modal-container {
   display: flex;
   width: 570px;
-  height: 86px;
+  /* height: 86px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .input-mail {
@@ -918,13 +919,6 @@ margin-right: 50px;
   margin-bottom: 12px;
 }
 
-.modal-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
 .modal-label {
   display: block;
   margin: 12px auto 4px;
@@ -1075,3 +1069,20 @@ margin-right: 50px;
 .checkbox:checked + .checkbox-label .castom-checkbox-icon .icon-check{
   opacity: 1;
 }
+
+/* .input-mail:placeholder-shown {
+  font-size: 16px;
+line-height: 20px;
+
+display: flex;
+align-items: center;
+letter-spacing: 0.03em;
+
+color: rgba(255, 255, 255, 0.6);
+
+
+}
+
+.input-mail:not(:placeholder-shown) {
+  border: 1px solid var(--accent-color);
+} */
